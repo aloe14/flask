@@ -3,11 +3,11 @@
 # @Time    :2020/6/9 16:17
 __author__ = 'Aloe'
 
-
+from app import db
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 # from flask_login import UserMixin
-from app import db
+
 
 
 class User(db.Model):

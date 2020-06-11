@@ -2,6 +2,8 @@
 # -*- coding:utf-8 -*-
 # @Time    :2020/6/9 15:30
 __author__ = 'Aloe'
+
+
 import os
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 class Config(object):
