@@ -6,6 +6,7 @@ __author__ = 'Aloe'
 from app import db
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
+from app import login
 # from flask_login import UserMixin
 
 
@@ -39,6 +40,6 @@ class Post(db.Model):
         return '<Post {}>'.format(self.body)
 
 
-# @login.user_loader
-# def load_user(id):
-#     return User.query.get(int(id))
+@login.user_loader
+def load_user(id):
+    return User.query.get(int(id))
