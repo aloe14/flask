@@ -7,6 +7,8 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import DataRequired, ValidationError, Email, EqualTo
 from app.models import User
+from wtforms import StringField, TextAreaField, SubmitField
+from wtforms.validators import DataRequired, Length
 
 
 class LoginForm(FlaskForm):
@@ -36,3 +38,9 @@ class RegisterForm(FlaskForm):
         user = User.query.filter_by(email=email.data).first()
         if user is not None:
             raise ValidationError('邮箱重复了，请您重新换一个呗!')
+
+class EditProfileForm(FlaskForm):
+    username = StringField('用户名', validators=[DataRequired(message='请输入用户名!')])
+    about_me = TextAreaField('关于我', validators=[Length(min=0, max=140)])
+    submit = SubmitField('提交')
+
