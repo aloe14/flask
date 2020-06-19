@@ -21,11 +21,11 @@
        <hr>
        {% with messages = get_flashed_messages() %}
            {% if messages %}
-            <ur>
+            <ul class="flash">
                 {% for message in messages %}
                     <li>{{ message }}</li>>
                 {% endfor %}
-            </ur>
+            </ul>
            {% endif %}
        {% endwith %}
 
